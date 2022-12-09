@@ -1,10 +1,10 @@
-import React from "react";
-import {IoDocumentTextOutline, IoLogInOutline} from "react-icons/io5";
+import React from 'react'
+import { IoLogInOutline, IoDocumentTextOutline } from 'react-icons/io5'
 
-function FormAddUser() {
+function FormEditUser() {
   return (
     <div>
-        <h1 className="title">Prodduct List</h1>
+        <h1 className="title">Edit User List</h1>
         <div className="card is-shadowless">
             <div className="card-content">
                 <div className="content">
@@ -39,7 +39,7 @@ function FormAddUser() {
                             
                             <div className='field mt-3'>
                                 <label className="label"><IoDocumentTextOutline/> Role</label>
-                                <div className="control">
+                                <div className="select is-primary">
                                 <select>
                                     <option value="user">User</option>
                                     <option value="admin">Admin</option>
@@ -58,4 +58,4 @@ function FormAddUser() {
   )
 }
 
-export default FormAddUser
+export default FormEditUser
