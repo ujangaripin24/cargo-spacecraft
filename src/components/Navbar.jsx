@@ -16,14 +16,11 @@ const Navbar = () => {
                   <span aria-hidden="true"></span>
                 </a>
               </div>
-            
               <div id="navbarBasicExample" className="navbar-menu">
-
-            
                 <div className="navbar-end">
                   <div className="navbar-item">
                     <div className="buttons">
-                      <button className="button is-light">
+                      <button className="button is-danger">
                         Log in
                       </button>
                     </div>
