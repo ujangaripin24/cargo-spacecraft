@@ -23,7 +23,7 @@ const Sidebar = () => {
             Sign out
         </p>
         <ul className="menu-list">
-            <li><button className=" button is-white has-shadow"><IoLogOut/> Logout</button></li>
+            <li><button className="button is-success has-shadow full-width"><IoLogOut/> Logout</button></li>
         </ul>
         </aside>
     </div>

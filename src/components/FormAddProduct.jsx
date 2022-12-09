@@ -1,7 +1,6 @@
-import React from "react";
-import {IoDocumentTextOutline, IoLogInOutline, IoLogoDropbox} from "react-icons/io5";
+import React from 'react'
 
-function FormAddUser() {
+function FormAddProduct() {
   return (
     <div>
         <h1 className="title"><IoLogoDropbox/> Product List</h1>
@@ -58,4 +57,4 @@ function FormAddUser() {
   )
 }
 
-export default FormAddUser
+export default FormAddProduct
