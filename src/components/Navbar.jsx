@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
     return(
         <div>
-            <nav className="navbar is-fixed-top hash-shadow" role="navigation" aria-label="main navigation">
+            <nav className="navbar is-fixed-top hash-shadow is-dark" role="navigation" aria-label="main navigation">
               <div className="navbar-brand">
                 <NavLink className="navbar-item" to="/dashboard">
                   <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" alt="Gambar"/>
