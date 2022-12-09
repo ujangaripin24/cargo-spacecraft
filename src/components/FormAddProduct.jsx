@@ -14,37 +14,6 @@ function FormAddProduct() {
                                 <input className="input" type="text" placeholder="Text input"/>
                             </div>
                             </div>
-
-                            <div className='field mt-3'>
-                                <label className="label"><IoDocumentTextOutline/> Email</label>
-                                <div className="control">
-                                <input className="input" type="text" placeholder="Text input"/>
-                            </div>
-                            </div>
-                            
-                            <div className='field mt-3'>
-                                <label className="label"><IoDocumentTextOutline/> Password</label>
-                                <div className="control">
-                                <input className="input" type="text" placeholder="Text input"/>
-                            </div>
-                            </div>
-                            
-                            <div className='field mt-3'>
-                                <label className="label"><IoDocumentTextOutline/> Conf Password</label>
-                                <div className="control">
-                                <input className="input" type="text" placeholder="Text input"/>
-                            </div>
-                            </div>
-                            
-                            <div className='field mt-3'>
-                                <label className="label"><IoDocumentTextOutline/> Role</label>
-                                <div className="control">
-                                <select>
-                                    <option value="user">User</option>
-                                    <option value="admin">Admin</option>
-                                </select>
-                            </div>
-                            </div>
                             
                             <div className='field'>
                                 <button className="button is-success is-fullwidth"><IoLogInOutline/> Masuk</button>

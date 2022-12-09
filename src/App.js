@@ -5,6 +5,7 @@ import Users from "./pages/Users";
 import Products from "./pages/Products";
 import AddUser from "./pages/AddUser";
 import EditUser from "./pages/EditUser";
+import DashboardMap from "./pages/DashboardMap"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/users/add" element={<AddUser/>}/>
           <Route path="/user/edit/:id" element={<EditUser/>}/>
           <Route path="/products" element={<Products/>}/>
+          <Route path="/users/map" element={<DashboardMap/>}/>
         </Routes>
       </BrowserRouter>
     </div>
