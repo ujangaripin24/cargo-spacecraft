@@ -1,7 +1,7 @@
 import React from 'react'
 import {MapContainer, TileLayer} from 'react-leaflet'
 import {IoLogoDropbox} from 'react-icons/io5'
-import "leaflet/dist/leaflet.css";
+import 'leaflet/dist/leaflet.css'
 
 function FormDashboardMap() {
   return (
@@ -10,10 +10,10 @@ function FormDashboardMap() {
         <div className="card has-shadow">
             <div className="card-content">
                 <div className="content">
-                    <MapContainer center={[51.505, -0.09]} zoom={19}>
-                        <TileLayer
-                        url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                    <MapContainer style={{ height: "450px", width: "100%" }}center={[51.505, -0.09]} zoom={19}>
+                    <TileLayer
+                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
                     </MapContainer>   
                 </div>
