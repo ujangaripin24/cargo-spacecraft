@@ -6,10 +6,10 @@ const initialState = {
     isError: false,
     isSuccess: false,
     isLoading: false,
-    message: ""
+    message: "" 
 }
 
-export const LoginUser = createAsyncThunk("user/loginUser", async(user, thunkAPI)=> {
+export const LoginUser = createAsyncThunk("user/LoginUser", async(user, thunkAPI)=> {
     try {
         const response = await axios.post('http://localhost:5000/login',{
             email: user.email,
@@ -24,6 +24,22 @@ export const LoginUser = createAsyncThunk("user/loginUser", async(user, thunkAPI
     }
 })
 
+export const getStatus = createAsyncThunk("user/getStatus", async(_, thunkAPI)=> {
+    try {
+        const response = await axios.get('http://localhost:5000/status');
+        return response.data;
+    } catch (error) {
+        if(error.response){
+            const message = error.response.data.msg;
+            return thunkAPI.rejectWithValue(message);
+        }
+    }
+})
+
+export const Logout = createAsyncThunk("user/Logout", async()=> {
+        await axios.delete('http://localhost:5000/logout');
+});
+
 export const authSlice = createSlice({
     name: "auth",
     initialState,
@@ -31,7 +47,7 @@ export const authSlice = createSlice({
         reset: (state) => initialState
     },
     extraReducers:(builder)=>{
-        builder.addCase(LoginUser.pandng, (state)=>{
+        builder.addCase(LoginUser.pending, (state)=>{
             state.isLoading = true;
         });
         builder.addCase(LoginUser.fulfilled, (state, action)=>{
@@ -40,6 +56,20 @@ export const authSlice = createSlice({
             state.user = action.payload;
         });
         builder.addCase(LoginUser.rejected, (state, action)=>{
+            state.isLoading = false;
+            state.isError = true;
+            state.message = action.payload;
+        })
+        // get user status
+        builder.addCase(getStatus.pending, (state)=>{
+            state.isLoading = true;
+        });
+        builder.addCase(getStatus.fulfilled, (state, action)=>{
+            state.isLoading = false;
+            state.isSuccess = true;
+            state.user = action.payload;
+        });
+        builder.addCase(getStatus.rejected, (state, action)=>{
             state.isLoading = false;
             state.isError = true;
             state.message = action.payload;
