@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from  "./Layout";
-import FormDashboardMap from "../components/FormDashboardMap";
+import FormDashboardMap from "../components/leaflet/FormDashboardMap";
 
 const DashboardMap = () => {
   return (

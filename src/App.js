@@ -5,7 +5,9 @@ import Users from "./pages/Users";
 import Products from "./pages/Products";
 import AddUser from "./pages/AddUser";
 import EditUser from "./pages/EditUser";
-import DashboardMap from "./pages/DashboardMap"
+import DashboardMap from "./pages/DashboardMap";
+import AddProduct from "./pages/AddProduct";
+import EditProduct from "./pages/EditProduct";
 
 function App() {
   return (
@@ -16,8 +18,10 @@ function App() {
           <Route path="/dashboard" element={<Dashboard/>}/>
           <Route path="/users" element={<Users/>}/>
           <Route path="/users/add" element={<AddUser/>}/>
-          <Route path="/user/edit/:id" element={<EditUser/>}/>
-          <Route path="/products" element={<Products/>}/>
+          <Route path="/users/edit/:id" element={<EditUser/>}/>
+          <Route path="/products/" element={<Products/>}/>
+          <Route path="/products/add" element={<AddProduct/>}/>
+          <Route path="/products/edit/:id" element={<EditProduct/>}/>
           <Route path="/users/map" element={<DashboardMap/>}/>
         </Routes>
       </BrowserRouter>

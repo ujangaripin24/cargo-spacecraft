@@ -39,7 +39,7 @@ function FormAddUser() {
                             
                             <div className='field mt-3'>
                                 <label className="label"><IoDocumentTextOutline/> Role</label>
-                                <div className="control">
+                                <div className="select is-fullwidth">
                                 <select>
                                     <option value="user">User</option>
                                     <option value="admin">Admin</option>

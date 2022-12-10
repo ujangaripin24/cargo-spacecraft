@@ -1,7 +1,30 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { IoLogInOutline, IoEyeOutline, IoDocumentTextOutline, IoRocketOutline } from "react-icons/io5";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from 'react-router-dom';
+import { LoginUser, reset } from "../features/authSlice"
 
 const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const {user, isError, isSuccess, isLoading, message} = useSelector(
+        (state) => state.auth
+    );
+
+    useEffect(()=>{
+        if(user || isSuccess){
+            navigate("/dashboard");
+        }
+        dispatch(reset());
+    },[user, isSuccess, dispatch, navigate]);
+
+    const Auth = (e) => {
+        e.priventDefault();
+        dispatch(LoginUser({email, password})); 
+    }
+    
   return (
         <section className="hero has-background-grey-light is-fullheight">
           <div className="hero-body">
@@ -19,21 +42,32 @@ const Login = () => {
                         </span>
                         </button>
                     </header>
-                        <form>
+                        <form onSubmit={Auth} className="box">
+                            {isError && <p className="has-text-center">{message}</p>}
                             <div className='field mt-3'>
                                 <label className="label"><IoDocumentTextOutline/> Email</label>
                                 <div className="control">
-                                <input className="input" type="text" placeholder="Text input"/>
+                                <input 
+                                    className="input"
+                                    type="text" 
+                                    value={email} 
+                                    onChange={(e)=>setEmail(e.target.value)}
+                                    placeholder="Text input"/>
                             </div>
                             </div>
                             <div className='field'>
                             <label className="label"><IoEyeOutline/> Password</label>
                             <div className="control">
-                                <input className="input" type="password" placeholder="*****"/>
+                                <input 
+                                    className="input" 
+                                    type="password"
+                                    value={password} 
+                                    onChange={(e)=>setPassword(e.target.value)}
+                                    placeholder="*****"/>
                             </div>
                             </div>
                             <div className='field'>
-                                <button className="button is-success is-fullwidth"><IoLogInOutline/> Masuk</button>
+                                <button type="submit" className="button is-success is-fullwidth"><IoLogInOutline/> {isLoading ? 'Harap tunggu...' : 'Masuk'}</button>
                             </div>
                         </form>        
                         </div>

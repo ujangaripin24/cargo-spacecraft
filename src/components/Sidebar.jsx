@@ -11,13 +11,13 @@ const Sidebar = () => {
         </p>
         <ul className="menu-list">
             <li><NavLink to={"/dashboard"}><IoHome/> Dashboard</NavLink></li>
-            <li><NavLink to={"/product"}><IoPricetag/> Product</NavLink></li>
+            <li><NavLink to={"/products"}><IoPricetag/> Product</NavLink></li>
         </ul>
         <p className="menu-label">
             Administration
         </p>
         <ul className="menu-list">
-            <li><NavLink to={"/user"}><IoPerson/> User</NavLink></li>
+            <li><NavLink to={"/users"}><IoPerson/> User</NavLink></li>
         </ul>
         <p className="menu-label">
             Sign out
